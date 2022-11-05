@@ -35,6 +35,7 @@ function Button(props: PropsTypes) {
           },
         )
       }
+      type="button"
     >
       {children}
     </button>

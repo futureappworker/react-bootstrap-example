@@ -1,0 +1,55 @@
+.button {
+  
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.variantNormal {
+  padding: 13px 16px;
+  border-color: #FFF;
+  color: #121212;
+  border-radius: 4px;
+  background-color: #FFF;
+  font-weight: Bold;
+  font-size: 14px;
+  line-height: 14px;
+}
+
+.variantNormal:hover {
+  background-color: #121212;
+  color: #FFF;
+}
+
+.variantOutlined {
+  padding: 8px 10px;
+  background-color: #121212;
+  border-color: #FFF;
+  color: #FFF;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 12px;
+  border-radius: 20px;
+}
+
+.variantOutlined:hover {
+  background-color: #FFF;
+  color: #121212;
+}
+
+.variantContained {
+  padding: 8px 10px;
+  background-color: #FFF;
+  border-color: #FFF;
+  color: #121212;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 12px;
+  border-radius: 20px;
+}
+
+.variantContained:hover {
+  background-color: #121212;
+  color: #FFF;
+}

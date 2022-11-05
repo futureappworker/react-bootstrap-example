@@ -1,0 +1,78 @@
+.slider {
+  margin: 0 20px;
+  position: relative;
+  height: 20px;
+  width: calc(100% - 40px);
+}
+
+.bgBox {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 8px;
+  width: 100%;
+  background-color: #FFF;
+  opacity: 0.3;
+  border-radius: 20px;
+}
+
+.bar {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 8px;
+  background-image: linear-gradient(to right, #FF5C01, #FFD25F);
+  border-radius: 20px;
+}
+
+.point {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: 20px;
+  width: 20px;
+  border-radius: 20px;
+  background-color: #FFD05D;
+}
+
+.innerPoint {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 10px;
+  width: 10px;
+  border-radius: 10px;
+  background-color: #000;
+}
+
+.input {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 100%;
+  opacity: 0;
+}
+
+.numberBox {
+  position: absolute;
+  bottom: -26px;
+  left: 0;
+  right: 0;
+}
+
+.number {
+  position: absolute;
+  bottom: 0;
+  font-size: 16px;
+  color: #FFF;
+  opacity: 0.5;
+  transform: translateX(-50%);
+}
+
+.numberActive {
+  opacity: 1;
+}

@@ -13,6 +13,7 @@ type PropsTypes = {
   children?: React.ReactNode;
   variant?: ButtonVariant,
   fullWidth?: boolean,
+  onClick?: () => void;
 };
 
 function Button(props: PropsTypes) {
@@ -20,6 +21,7 @@ function Button(props: PropsTypes) {
     children,
     variant = ButtonVariant.Normal,
     fullWidth = false,
+    onClick = () => {},
   } = props;
 
   return (
@@ -36,6 +38,7 @@ function Button(props: PropsTypes) {
         )
       }
       type="button"
+      onClick={onClick}
     >
       {children}
     </button>

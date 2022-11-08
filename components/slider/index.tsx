@@ -37,7 +37,7 @@ function Slider(props: PropsTypes) {
 
   const [sliderWidth, setSliderWidth] = useState(0);
   useEffect(() => {
-    const sliderElement = document.querySelector(`.${styles.slider}`);
+    const sliderElement = document.querySelector(`.${styles.baseBox}`);
     if (sliderElement) {
       const { width } = sliderElement.getBoundingClientRect();
       setSliderWidth(width);
@@ -65,45 +65,47 @@ function Slider(props: PropsTypes) {
 
   return (
     <div className={styles.slider}>
-      <div className={styles.bgBox} />
-      <div
-        className={styles.bar}
-        style={{ width: barWidth }}
-      />
-      <div
-        className={styles.point}
-        style={{ left: pointLeft }}
-      >
-        <div className={styles.innerPoint} />
-      </div>
-      <input
-        className={styles.input}
-        type="range"
-        min={0}
-        max={max}
-        step={1}
-        value={valueIndex}
-        onChange={handleOnChange}
-      />
-      <div className={styles.numberBox}>
-        {
-          points && points.map((point, index) => (
-            <div
-              className={
-                classNames(
-                  styles.number,
-                  {
-                    [styles.numberActive]: point === +points[parseInt(valueIndex, 10)],
-                  },
-                )
-              }
-              style={{ left: basePointWidth * index }}
-              key={point}
-            >
-              {point}
-            </div>
-          ))
-        }
+      <div className={styles.baseBox}>
+        <div className={styles.bgBox} />
+        <div
+          className={styles.bar}
+          style={{ width: barWidth }}
+        />
+        <div
+          className={styles.point}
+          style={{ left: pointLeft }}
+        >
+          <div className={styles.innerPoint} />
+        </div>
+        <input
+          className={styles.input}
+          type="range"
+          min={0}
+          max={max}
+          step={1}
+          value={valueIndex}
+          onChange={handleOnChange}
+        />
+        <div className={styles.numberBox}>
+          {
+            points && points.map((point, index) => (
+              <div
+                className={
+                  classNames(
+                    styles.number,
+                    {
+                      [styles.numberActive]: point === +points[parseInt(valueIndex, 10)],
+                    },
+                  )
+                }
+                style={{ left: basePointWidth * index }}
+                key={point}
+              >
+                {point}
+              </div>
+            ))
+          }
+        </div>
       </div>
     </div>
   );

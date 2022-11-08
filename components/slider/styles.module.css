@@ -1,4 +1,8 @@
 .slider {
+  height: 46px;
+}
+
+.baseBox {
   margin: 0 20px;
   position: relative;
   height: 20px;

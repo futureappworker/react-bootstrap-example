@@ -11,6 +11,8 @@
 
 .img {
   border-radius: 5px;
+  width: 40px;
+  height: 40px;
 }
 
 .fullname {
@@ -20,10 +22,27 @@
   color: #FFF;
 }
 
+.fullnameTemplate {
+  margin-bottom: 10px;
+  min-height: 20px;
+  width: 50%;
+}
+
 .username {
   font-size: 14px;
   font-weight: 400;
   line-height: 21px;
   color: #FFF;
   opacity: 0.5;
+}
+
+.usernameTemplate {
+  min-height: 15px;
+  width: 25%;
+}
+
+.btnTemplate {
+  min-width: 80px;
+  min-height: 32px;
+  border-radius: 20px;
 }

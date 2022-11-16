@@ -1,11 +1,74 @@
-import React from 'react';
+import React, { useState, useCallback } from 'react';
+
+import SearchMode from '../components/pages/home/searchMode';
+import ResultMode from '../components/pages/home/resultMode';
+
+import BaseLayout from '../layouts/baseLayout';
+import Porfile from '../components/pages/home/porfile';
+
+import useScrollToTop from '../hooks/useScrollToTop';
+
+import styles from '../styles/home.module.css';
+
+export enum HomeMode {
+  Search = 'search',
+  Result = 'result',
+}
 
 export default function Home() {
+  const [mode, setMode] = useState(HomeMode.Search);
+  const [searchKeyword, setSearchKeyword] = useState('');
+  const [resultRerPageNumber, setResultRerPageNumber] = useState(3);
+
+  const handleOnSearch = useCallback(
+    () => {
+      setMode(HomeMode.Result);
+    },
+    [searchKeyword, resultRerPageNumber],
+  );
+
+  const searchMode = (
+    <SearchMode
+      searchKeyword={searchKeyword}
+      setSearchKeyword={setSearchKeyword}
+      resultRerPageNumber={resultRerPageNumber}
+      setResultRerPageNumber={setResultRerPageNumber}
+      handleOnSearch={handleOnSearch}
+    />
+  );
+
+  const handleOnResultBack = useCallback(
+    () => {
+      setMode(HomeMode.Search);
+    },
+    [],
+  );
+
+  const resultMode = (
+    <ResultMode
+      searchKeyword={searchKeyword}
+      resultRerPageNumber={resultRerPageNumber}
+      handleOnResultBack={handleOnResultBack}
+    />
+  );
+
+  useScrollToTop({
+    dependencies: [mode],
+  });
+
   return (
-    <div>
-      <h2>
-        Home
-      </h2>
-    </div>
+    <BaseLayout>
+      <div className={styles.home}>
+        <div
+          className="app-container"
+        >
+          {mode === HomeMode.Search && searchMode}
+          {mode === HomeMode.Result && resultMode}
+        </div>
+        <div className={styles.porfile}>
+          <Porfile />
+        </div>
+      </div>
+    </BaseLayout>
   );
 }

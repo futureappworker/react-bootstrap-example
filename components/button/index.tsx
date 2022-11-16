@@ -10,10 +10,10 @@ export enum ButtonVariant {
 }
 
 type PropsTypes = {
-  children?: React.ReactNode;
+  children?: React.ReactNode,
   variant?: ButtonVariant,
   fullWidth?: boolean,
-  onClick?: () => void;
+  onClick?: () => void,
 };
 
 function Button(props: PropsTypes) {

@@ -1,0 +1,10 @@
+.searchBoxWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: calc(100vh - 560px);
+}
+
+.searchBox {
+  width: 342px;
+}

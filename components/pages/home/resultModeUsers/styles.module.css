@@ -1,0 +1,15 @@
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.item {
+  margin-right: 32px;
+  margin-bottom: 30px;
+  width: 220px;
+}
+
+.item:nth-child(3n+3) {
+  margin-right: 0;
+}

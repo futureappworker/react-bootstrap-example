@@ -9,11 +9,11 @@ export enum InputType {
 }
 
 type PropsTypes = {
-  type?: InputType
+  type?: InputType,
   fullWidth?: boolean,
   value?: string,
   placeholder?: string,
-  onChange?: (value: string) => void;
+  onChange?: (value: string) => void,
 };
 
 function Input(props: PropsTypes) {

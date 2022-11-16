@@ -7,9 +7,9 @@ import useWindowResize from '../../hooks/useWindowResize';
 import styles from './styles.module.css';
 
 type PropsTypes = {
-  points: Array<number>;
-  defaultValue: number;
-  onChange?: (value: number) => void;
+  points: Array<number>,
+  defaultValue: number,
+  onChange?: (value: number) => void,
 };
 
 function Slider(props: PropsTypes) {

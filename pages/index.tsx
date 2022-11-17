@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 
 import SearchMode from '../components/pages/home/searchMode';
 import ResultMode from '../components/pages/home/resultMode';
@@ -6,6 +6,7 @@ import ResultMode from '../components/pages/home/resultMode';
 import BaseLayout from '../layouts/baseLayout';
 import Porfile from '../components/pages/home/porfile';
 
+import useWindowResize from '../hooks/useWindowResize';
 import useScrollToTop from '../hooks/useScrollToTop';
 
 import styles from '../styles/home.module.css';
@@ -52,6 +53,16 @@ export default function Home() {
     />
   );
 
+  const { width: windowWidth } = useWindowResize(300);
+  const [hasPorfile, setHasPorfile] = useState(() => windowWidth > 1440);
+  useEffect(() => {
+    if (windowWidth > 1440) {
+      setHasPorfile(true);
+      return;
+    }
+    setHasPorfile(false);
+  }, [windowWidth]);
+
   useScrollToTop({
     dependencies: [mode],
   });
@@ -65,9 +76,13 @@ export default function Home() {
           {mode === HomeMode.Search && searchMode}
           {mode === HomeMode.Result && resultMode}
         </div>
-        <div className={styles.porfile}>
-          <Porfile />
-        </div>
+        {
+          hasPorfile && (
+            <div className={styles.porfile}>
+              <Porfile />
+            </div>
+          )
+        }
       </div>
     </BaseLayout>
   );

@@ -1,6 +1,7 @@
 # react-bootstrap-example
 
-React example based on next.js.
+React example based on next.js. 
+[https://react-bootstrap-example-app.herokuapp.com](https://react-bootstrap-example-app.herokuapp.com)
 
 ## technology stack
 

@@ -1,10 +1,29 @@
+.searchInputWrapper {
+  margin-bottom: 35px;
+}
+
 .searchBoxWrapper {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  min-height: calc(100vh - 560px);
+  min-height: calc(100vh - 515px);
 }
 
 .searchBox {
-  width: 342px;
+  margin-top: 50px;
+}
+
+@media (min-width: 1000px) {
+  .searchInputWrapper {
+    margin-bottom: 0;
+  }
+
+  .searchBoxWrapper {
+    min-height: calc(100vh - 560px);
+  }
+
+  .searchBox {
+    margin-top: 0;
+    width: 342px;
+  }
 }

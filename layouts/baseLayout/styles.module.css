@@ -1,8 +1,17 @@
 .baseLayout {
-  display: flex;
   min-height: 100vh;
 }
 
 .main {
-  flex: 1 1 auto;
+}
+
+@media (min-width: 1000px) {
+  .baseLayout {
+    display: flex;
+    min-height: 100vh;
+  }
+  
+  .main {
+    flex: 1 1 auto;
+  }
 }

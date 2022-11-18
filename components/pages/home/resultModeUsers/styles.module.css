@@ -5,11 +5,13 @@
 }
 
 .item {
-  margin-right: 32px;
-  margin-bottom: 30px;
-  width: 220px;
+  margin: 0 0 35px 0;
+  width: 100%;
 }
 
-.item:nth-child(3n+3) {
-  margin-right: 0;
+@media (min-width: 800px) {
+  .item {
+    margin: 0 16px 30px 16px;
+    width: 220px;
+  }
 }

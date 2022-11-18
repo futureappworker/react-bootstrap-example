@@ -1,5 +1,10 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, {
+  useContext, useState, useEffect, useRef,
+} from 'react';
 import { useRequest } from 'ahooks';
+import classNames from 'classnames';
+
+import ScreenModeContext from '../../../../contexts/ScreenModeContext';
 
 import getUsers from '../../../../services/getUsers';
 
@@ -21,6 +26,8 @@ function ResultMode(props: PropsTypes) {
     resultRerPageNumber,
     handleOnResultBack,
   } = props;
+
+  const screenMode = useContext(ScreenModeContext);
 
   const resultModeUsersRef = useRef<any>(null);
 
@@ -76,7 +83,14 @@ function ResultMode(props: PropsTypes) {
   const hasMoreButton = !error && !loading && totalPages > page;
 
   return (
-    <div>
+    <div
+      className={
+        classNames(
+          'app-container',
+          styles.resultMode,
+        )
+      }
+    >
       <h2 className="h2">
         <button
           className={styles.backButton}
@@ -87,9 +101,29 @@ function ResultMode(props: PropsTypes) {
             width={26}
             height={26}
           />
-          <span className={styles.backButtonText}>Results</span>
+          <span className={styles.backButtonText}>
+            {
+              screenMode.isMobile && (
+                <span>Home Page</span>
+              )
+            }
+            {
+              screenMode.isDesktop && (
+                <span>Results</span>
+              )
+            }
+          </span>
         </button>
       </h2>
+      {
+        screenMode.isMobile && (
+          <div className={styles.title}>
+            <span>
+              Results
+            </span>
+          </div>
+        )
+      }
       <ResultModeUsers
         ref={resultModeUsersRef}
         error={error}

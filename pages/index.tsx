@@ -70,12 +70,8 @@ export default function Home() {
   return (
     <BaseLayout>
       <div className={styles.home}>
-        <div
-          className="app-container"
-        >
-          {mode === HomeMode.Search && searchMode}
-          {mode === HomeMode.Result && resultMode}
-        </div>
+        {mode === HomeMode.Search && searchMode}
+        {mode === HomeMode.Result && resultMode}
         {
           hasPorfile && (
             <div className={styles.porfile}>

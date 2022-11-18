@@ -1,12 +1,12 @@
 .img {
   width: 100%;
-  margin-bottom: 12px;
+  margin-bottom: 17px;
 }
 
 .title {
   margin-bottom: 0;
   font-size: 15px;
-  line-height: 1.5;
+  line-height: 22.4px;
   letter-spacing: 0.14px;
 }
 
@@ -26,4 +26,16 @@
 .usernameTemplate {
   min-height: 1.5em;
   width: 25%;
+}
+
+@media (min-width: 1000px) {
+  .img {
+    margin-bottom: 12px;
+  }
+
+  .title {
+    margin-bottom: 0;
+    font-size: 15px;
+    line-height: 1.5;
+  }
 }

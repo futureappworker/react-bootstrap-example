@@ -25,6 +25,7 @@ When the screen width is less than 1440px, Followers/Following will be hidden.
 ## Technology Stack
 
 - React
+- React Hook
 - Typescript
 - Bootstrap
 - Scss

@@ -61,7 +61,7 @@ function Header() {
                       )
                     }
                   >
-                    HOME
+                    Home
                   </span>
                 </a>
               </ActiveLink>
@@ -95,7 +95,7 @@ function Header() {
                       )
                     }
                   >
-                    TAGS
+                    Tags
                   </span>
                 </a>
               </ActiveLink>

@@ -38,4 +38,8 @@
     font-size: 15px;
     line-height: 1.5;
   }
+
+  .titleTemplate {
+    margin-bottom: 10px;
+  }
 }
